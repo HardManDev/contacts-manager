@@ -7,7 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ContactsManager.Domain\ContactsManager.Domain.csproj" />
+        <ProjectReference Include="..\ContactsManager.Domain\ContactsManager.Domain.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9"/>
     </ItemGroup>
 
 </Project>
