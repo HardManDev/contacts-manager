@@ -19,5 +19,5 @@ public class ContactVm : IMapWith<Contact>
     public DateTimeOffset? UpdatedAt { get; set; }
 
     public void Mapping(Profile profile) =>
-        profile.CreateMap<ContactVm, Contact>();
+        profile.CreateMap<Contact, ContactVm>();
 }
