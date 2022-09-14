@@ -9,8 +9,8 @@ public class Contact
 
     public string? JobTitle { get; set; }
 
-    public DateTimeOffset BirthDate { get; set; }
+    public DateTimeOffset? BirthDate { get; set; }
 
     public DateTimeOffset CreatedAt { get; set; }
-    public DateTimeOffset UpdatedAt { get; set; }
+    public DateTimeOffset? UpdatedAt { get; set; }
 }
