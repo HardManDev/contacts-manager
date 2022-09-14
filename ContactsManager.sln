@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManager.Domain", "src\ContactsManager.Domain\ContactsManager.Domain.csproj", "{7CB7D0B9-0924-44E1-8C3C-6125E1608773}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsManager.Application", "src\ContactsManager.Application\ContactsManager.Application.csproj", "{2832C5D3-44BA-436D-8ECA-EB1EF006EBE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{7CB7D0B9-0924-44E1-8C3C-6125E1608773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CB7D0B9-0924-44E1-8C3C-6125E1608773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CB7D0B9-0924-44E1-8C3C-6125E1608773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2832C5D3-44BA-436D-8ECA-EB1EF006EBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2832C5D3-44BA-436D-8ECA-EB1EF006EBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2832C5D3-44BA-436D-8ECA-EB1EF006EBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2832C5D3-44BA-436D-8ECA-EB1EF006EBE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
