@@ -11,4 +11,9 @@
         <ProjectReference Include="..\ContactsManager.Domain\ContactsManager.Domain.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.9"/>
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1"/>
+    </ItemGroup>
+
 </Project>
