@@ -1,6 +1,78 @@
-﻿.contact-card {
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: #F0F0F0;
+}
+
+#create-contact-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 316px;
+}
+
+.contact-card {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    width: 400px;
+    margin-block: 10.5px;
+    padding: 15px;
+    background-color: #F9F9F9;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact-card hr {
+    margin-block: 4px;
+}
+
+.contact-title {
+    margin-block: 4px;
+    font-size: 32pt;
+    font-weight: 100;
+}
+
+.contact-job-title {
+    font-size: 16pt;
+    font-weight: 100;
+    color: rgba(200, 200, 200);
+}
+
+.contact-birth-date {
+    display: flex;
+    justify-content: flex-end;
+    color: rgba(200, 200, 200);
+    margin-top: -25px;
+}
+
+.contact-birth-date i {
+    transform: translateY(-3px);
+}
+
+.contact-phone {
+    display: flex;
+}
+
+.contact-phone i {
+    font-size: 28pt;
+    transform: translateY(12px);
+}
+
+.contact-phone-number {
+    font-weight: 500;
+    font-size: 28pt;
+}
+
+.contact-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-inline: 8px;
+    margin-block: 4px;
 }
