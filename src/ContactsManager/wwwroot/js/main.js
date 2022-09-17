@@ -21,6 +21,10 @@
 function openDatepicker({datepickerSelector}) {
     const datepicker = $(datepickerSelector)
 
-    M.Datepicker.init(datepicker)
+    M.Datepicker.init(datepicker, {
+        yearRange: [1900, new Date(Date.now()).getFullYear()],
+        format: 'mmmm dd, yyyy',
+        maxDate: new Date(Date.now())
+    })
     M.Datepicker.getInstance(datepicker).open()
 }

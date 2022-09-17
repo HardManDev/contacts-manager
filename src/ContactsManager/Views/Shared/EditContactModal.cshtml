@@ -1,4 +1,5 @@
-﻿@model ContactsManager.Application.Models.ViewModels.ContactVm
+﻿@using System.Globalization
+@model ContactsManager.Application.Models.ViewModels.ContactVm
 
 <form asp-controller="Home" asp-action="UpdateContact">
   <input type="hidden" value="@Model.Id"
@@ -33,10 +34,10 @@
       <div class="input-field col s6">
         <i class="material-icons prefix">date_range</i>
         <input id="birth_date" type="text" class="datepicker"
-               onclick="openDatepicker({
+               onfocus="openDatepicker({
                  datepickerSelector: '#birth_date'
                })"
-               value="@Model.BirthDate?.ToString("MM d, yyyy")"
+               value="@Model.BirthDate?.ToString("MMMM d, yyyy", new CultureInfo("en-US"))"
                asp-for="BirthDate">
         <label for="birth_date">Birth date</label>
       </div>
