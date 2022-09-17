@@ -7,16 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\lib"/>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ContactsManager.Application\ContactsManager.Application.csproj"/>
     <ProjectReference Include="..\ContactsManager.Database\ContactsManager.Database.csproj"/>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\lib\jquery\jquery-3.6.1.min.js">
+      <DependentUpon>jquery-3.6.1.js</DependentUpon>
+    </Content>
   </ItemGroup>
 
 </Project>
