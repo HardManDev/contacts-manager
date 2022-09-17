@@ -4,9 +4,11 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contacts manager - @ViewData["Title"]</title>
+  <link rel="stylesheet" href="~/lib/materialize/css/materialize.min.css">
 </head>
 <body>
 @RenderBody()
 @await RenderSectionAsync("Scripts", false)
+<script src="~/lib/materialize/js/materialize.min.js"></script>
 </body>
 </html>
