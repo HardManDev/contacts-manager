@@ -1,3 +1,62 @@
-﻿@{
+﻿@model List<ContactsManager.Application.Models.ViewModels.ContactVm>
+@{
   ViewData["Title"] = "Contacts";
 }
+
+<div class="container">
+  <a class="btn-floating btn-large waves-effect waves-light red"
+     onclick="openModal({ 
+        url: 'Home/GetCreateContactModalPartial',
+        modalSelector: '#create-contact-modal'
+     })">
+    <i class="material-icons">add</i>
+  </a>
+
+  @* <div class="row"> *@
+  @foreach (var contact in Model)
+  {
+    <div class="col s3">
+      <div class="row">
+        <h4>@contact.Name</h4>
+      </div>
+      <div class="row">
+        <span>@contact.JobTitle</span>
+      </div>
+      <div class="row">
+        <hr>
+        <span>Phone number: @contact.MobilePhone</span>
+
+      </div>
+      <div class="row">
+        <span>Birth date: @contact.BirthDate?.ToString("dd MMMM yyyy")</span>
+      </div>
+      <div class="row">
+        <div class="col s2">
+          <button class="btn waves-effect waves-light"
+                  onclick="openModal({
+                    url: 'Home/GetEditContactModalPartial',
+                    modalSelector: '#edit-contact-modal',
+                    data: {
+                      id: '@contact.Id'
+                    }
+                  })">
+            Edit
+            <i class="material-icons right">edit</i>
+          </button>
+        </div>
+        <div class="col s2">
+          <button class="btn waves-effect waves-light red darken-4"
+                  value="@contact.Id"
+                  onclick="location.href='@Url.Action("DeleteContact", "Home", new { id = contact.Id })'">
+            Delete
+            <i class="material-icons right">delete</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+  @* </div> *@
+</div>
+
+<div id="create-contact-modal" class="modal"></div>
+<div id="edit-contact-modal" class="modal"></div>
