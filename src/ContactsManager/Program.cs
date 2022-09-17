@@ -1,7 +1,24 @@
+using System.Reflection;
+using ContactsManager.Application;
+using ContactsManager.Application.Interfaces;
+using ContactsManager.Application.Mappings;
+using ContactsManager.Database;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddApplication();
+builder.Services.AddDatabase(builder.Configuration);
+
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile(
+        new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
+    config.AddProfile(
+        new AssemblyMappingProfile(typeof(IApplicationDbContext).Assembly));
+});
 
 var app = builder.Build();
 
