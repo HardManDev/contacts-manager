@@ -9,7 +9,7 @@
      id="create-contact-btn"
      onclick="openModal({
        url: 'Home/GetCreateContactModalPartial',
-       modalSelector: '#create-contact-modal'
+       modalSelector: '#contact-modal'
      })">
     <i class="material-icons">add</i>
   </a>
@@ -48,7 +48,7 @@
             <button class="btn waves-effect waves-light"
                     onclick="openModal({
                       url: 'Home/GetEditContactModalPartial/',
-                      modalSelector: '#edit-contact-modal',
+                      modalSelector: '#contact-modal',
                       data: {
                         id: '@contact.Id'
                       }
@@ -68,5 +68,4 @@
   </div>
 </div>
 
-<div id="create-contact-modal" class="modal"></div>
-<div id="edit-contact-modal" class="modal"></div>
+<div id="contact-modal" class="modal"></div>

@@ -8,14 +8,25 @@
       <div class="input-field col s6">
         <i class="material-icons prefix">account_circle</i>
         <input id="full_name" type="text" class="validate"
-               asp-for="Name">
+               asp-for="Name"
+               onblur="validateName()" onkeyup="validateName()">
         <label for="full_name">Full name</label>
+        <span class="helper-text"
+              data-error="Name must contain more than 2 symbols"
+              data-success="Done">
+        </span>
       </div>
       <div class="input-field col s6">
         <i class="material-icons prefix">phone</i>
         <input id="mobile_phone" type="tel" class="validate"
-               asp-for="MobilePhone">
+               asp-for="MobilePhone"
+               onblur="validatePhoneNumber()" onkeyup="validatePhoneNumber()">
         <label for="mobile_phone">Mobile phone</label>
+        <span class="helper-text"
+              data-error="Wrong format (example: +375251112233)"
+              data-success="Done">
+          Phone number must be in international format (example: +375251112233)
+        </span>
       </div>
     </div>
     <div class="row">
@@ -37,7 +48,8 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button class="btn waves-effect waves-light" type="submit" name="action">
+    <button id="send-form-btn" class="btn waves-effect waves-light disabled"
+            type="submit" name="action">
       Create
       <i class="material-icons right">send</i>
     </button>
