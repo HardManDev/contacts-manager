@@ -40,26 +40,30 @@ function openDatepicker({datepickerSelector}) {
     M.Datepicker.getInstance(datepicker).open()
 }
 
-function validateName() {
-    const nameInput = $('#full_name')
-    const isValid = nameInput.val().trim().length > 2
+function validate(el, param) {
+    el = $(el)
 
-    nameInput.toggleClass('invalid', !isValid)
-    validateSendFormButton()
-}
+    let isValid = false
 
-function validatePhoneNumber() {
-    const phoneInput = $('#mobile_phone')
-    const isValid = phoneRegExp.test(phoneInput.val().trim())
+    switch (param) {
+        case 'name':
+            isValid = el.val().trim().length > 2
+            break;
+        case 'phoneNumber':
+            isValid = phoneRegExp.test(el.val().trim())
+            break;
+    }
 
-    phoneInput.toggleClass('invalid', !isValid)
+    el.toggleClass('invalid', !isValid)
+    el.toggleClass('valid', isValid)
+
     validateSendFormButton()
 }
 
 function validateSendFormButton() {
     const isValid =
-        $('#full_name').attr('class').split(' ').includes('invalid') ||
-        $('#mobile_phone').attr('class').split(' ').includes('invalid');
+        $('#full_name').attr('class').split(' ').includes('valid') &&
+        $('#mobile_phone').attr('class').split(' ').includes('valid')
 
-    $('#send-form-btn').toggleClass('disabled', isValid);
+    $('#send-form-btn').prop('disabled', !isValid)
 }

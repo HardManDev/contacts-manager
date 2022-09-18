@@ -10,10 +10,11 @@
     <div class="row">
       <div class="input-field col s6">
         <i class="material-icons prefix">account_circle</i>
-        <input id="full_name" type="text" class="validate"
-               value="@Model.Name"
-               asp-for="Name"
-               onblur="validateName()" onkeyup="validateName()">
+        <input id="full_name" class="validate"
+               type="text" value="@Model.Name" asp-for="Name"
+               onfocus="validate(this, 'name')"
+               onkeyup="validate(this, 'name')"
+               onblur="validate(this, 'name')">
         <label for="full_name">Full name</label>
         <span class="helper-text"
               data-error="Name must contain more than 2 symbols"
@@ -22,10 +23,11 @@
       </div>
       <div class="input-field col s6">
         <i class="material-icons prefix">phone</i>
-        <input id="mobile_phone" type="tel" class="validate"
-               value="@Model.MobilePhone"
-               asp-for="MobilePhone"
-               onblur="validatePhoneNumber()" onkeyup="validatePhoneNumber()">
+        <input id="mobile_phone" class="validate"
+               type="tel" value="@Model.MobilePhone" asp-for="MobilePhone"
+               onfocus="validate(this, 'phoneNumber')"
+               onkeyup="validate(this, 'phoneNumber')"
+               onblur="validate(this, 'phoneNumber')">
         <label for="mobile_phone">Mobile phone</label>
         <span class="helper-text"
               data-error="Wrong format (example: +375251112233)"
